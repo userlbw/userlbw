@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="UserMapper">
+    <select id="selectUsers" resultType="entitys.User">
+        select * from user1.t_user
+    </select>
+
+    <!--parameter  传入的参数是User类的对象
+    比如#{user_id}就是调用他的get方法 格式为get{}
+    比如#{abc} ,那调用的方法就是getabc
+    如果没有对应的get方法就获取他原本的属性值
+    -->
+    <insert id="insertUsers" parameterType="entitys.User">
+        insert into user1.t_user(user_name, cnname, sex, mobile, email, note)
+        VALUES(#{user_name},#{cnname},#{sex},#{mobile},#{email},#{note}) ;
+    </insert>
+
+    <delete id="">
+
+    </delete>
+
+    <update id="">
+
+    </update>
+</mapper>
